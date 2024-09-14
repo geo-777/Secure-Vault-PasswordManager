@@ -1,0 +1,6 @@
+mysql-connector-python
+cryptography
+pyfiglet
+
+ee saanam okke install using :
+pip install <library_name>
