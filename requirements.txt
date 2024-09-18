@@ -1,6 +1,7 @@
 mysql-connector-python
 cryptography
 pyfiglet
-
+tabulate
+pwinput
 ee saanam okke install using :
 pip install <library_name>
