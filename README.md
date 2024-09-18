@@ -21,3 +21,10 @@ Ensure you have the required packages installed. You can install them using pip:
 
 ```bash
 pip install tabulate pwinput cryptography mysql-connector-python pyfiglet
+```
+## **How to use ?**
+After the installation of the neccessary packages run the follwing command :
+
+```bash
+python main.py
+```
