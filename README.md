@@ -1,4 +1,4 @@
-# **Pass GO: Password Manager**
+# **Secure Vault: Password Manager**
 
 ## **Overview**
 
