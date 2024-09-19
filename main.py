@@ -19,7 +19,7 @@ RESET = '\033[0m'  # Reset to default color
 
 # Required values
 db_name = "password_manager"
-app_name = "Pass GO"
+app_name = "Secure Vault"
 ascii_title_art = pyfiglet.figlet_format(app_name, font="doom")
 user = None  # Logged-in user, initialized as None and changed upon login
 
