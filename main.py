@@ -151,6 +151,7 @@ MENU
 
             if data == []:
                 print(f"{RED}No details found for {delete}{RESET}")
+                continue
             elif len(data) > 1:  # Multiple accounts for the same website
                 print("Multiple accounts found:")
                 for record in data:
@@ -171,6 +172,7 @@ MENU
 
             if data == []:
                 print(f"{RED}No details found for {update_site}{RESET}")
+                continue
             elif len(data) > 1:  # Multiple accounts for the same website
                 print("Multiple accounts found:")
                 for record in data:
@@ -190,8 +192,11 @@ MENU
         elif choice == 6:
             length = input("Enter the length for your password: ")
             if length.isdigit():
-                print(f"{YELLOW}Generated password: {generate_password(int(length))}{RESET}\n")
+                try:
+                    print(f"{YELLOW}Generated password: {generate_password(int(length))}{RESET}\n")
+                except Exception as e:print(f"{RED}{e}{RESET}")
             else:
+
                 print(f"{RED}Enter a valid length!{RESET}\n")
 
         # Password Strength Checker

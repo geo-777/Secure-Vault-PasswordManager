@@ -40,12 +40,14 @@ def strength_checker(password: str):
 def generate_password(length=8):
     import random
     import string
-
+    if length < 8:
+        raise ValueError("Password length should be at least 8 characters.")
     characters = string.ascii_letters + string.digits + string.punctuation
-
+    password=""
     while True:
-        password = ''.join(random.choice(characters) for _ in range(length))
-
+        for _ in range(length):
+            password += ''.join(random.choice(characters) )
+       
         if strength_checker(password) == "Strong password":
            
             return password
