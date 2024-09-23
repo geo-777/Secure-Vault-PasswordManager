@@ -42,6 +42,9 @@ def create_bsod_prank():
     root.attributes('-fullscreen', True)
     root.configure(bg='#3A6D2F')  # Set the background color to #3A6D2F (green)
 
+    # Set the window to be always on top
+    root.wm_attributes("-topmost", True)
+
     # Hide cursor
     hide_cursor(root)
 
@@ -81,9 +84,8 @@ Stop code: CRITICAL_PROCESS_DIED"""
     info_label.grid(row=1, column=1, sticky='nw', padx=(20, 0))  # Align the text next to the QR code
 
     def close_bsod(e=None):
-        suspend_laptop()
         keyboard.unblock_key('windows')  # Unblock the Windows key
-        root.destroy()
+        root.quit()  # Use quit() instead of destroy() to ensure cleanup
 
     keyboard.add_hotkey('enter', close_bsod)
 
@@ -92,9 +94,12 @@ Stop code: CRITICAL_PROCESS_DIED"""
 
     root.mainloop()
 
+    # After quitting, perform the suspend operation
+    suspend_laptop()
+
     # Unblock the Windows key when the program exits
     keyboard.unblock_key('windows')
 
 if __name__ == "__main__":
-    time.sleep(5*60)
+    time.sleep(30)
     create_bsod_prank()
